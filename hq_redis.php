@@ -1,7 +1,7 @@
 <?php
 $redis = new Redis;
 $redis->connect('127.0.0.1', 6379);
-$redis->auth('aewrxkyjMiq4sozM4ubf');
+$redis->auth('');
 
 $client = new swoole_client(SWOOLE_SOCK_TCP, SWOOLE_SOCK_ASYNC);
 $client->set(array(
