@@ -12,7 +12,7 @@ $server->on('message', function (swoole_websocket_server $server, $frame) {
 	
 	$redis = new Redis;
 	$redis->connect('127.0.0.1', 6379);
-	$redis->auth('aewrxkyjMiq4sozM4ubf');
+	$redis->auth('');
 		global $timer;
 		$timer = swoole_timer_tick(1000, function () use ($server,$redis) {				
 			global $user;
