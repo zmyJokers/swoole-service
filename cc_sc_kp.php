@@ -26,14 +26,14 @@ $client->on("receive", function($cli, $data) use ($redis){
 	}
 });
 $client->on("error", function($cli){
-	$cli->connect("120.55.113.216",29999,2);
+	$cli->connect("0.0.0.0",1212,2);
 	echo "Connect failed\n";
 });
 $client->on("close", function($cli){
-	$cli->connect("120.55.113.216",29999,2);
+	$cli->connect("0.0.0.0",1212,2);
 	echo "Connection close\n";
 });
-$client->connect("120.55.113.216",29999,2);
+$client->connect("0.0.0.0",1212,2);
 
 function update_cc($data){ // 更新对应合约
 $http = new swoole_http_client('127.0.0.1', 1215);
