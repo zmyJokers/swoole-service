@@ -25,13 +25,13 @@ $client->on("receive", function($cli, $data){
 });
 $client->on("error", function($cli){
 	echo "Connect failed\n";
-	$cli->connect("180.169.198.238",19996,2);
+	$cli->connect("0.0.0.0",1212,2);
 });
 $client->on("close", function($cli){
 	echo "Connection close\n";
-	$cli->connect("180.169.198.238",19996,2);
+	$cli->connect("0.0.0.0",1212,2);
 });
-$client->connect("180.169.198.238",19996,2);
+$client->connect("0.0.0.0",1212,2);
 
 function update_cc($data){ // 更新对应合约
 	$http = new swoole_http_client('127.0.0.1', 1215);
