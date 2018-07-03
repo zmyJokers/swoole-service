@@ -33,13 +33,13 @@ $client->on("receive", function($cli, $data) use ($redis){
 });
 $client->on("error", function($cli){
 	echo "Connect failed\n";
-	$cli->connect("120.55.113.216",29998,2);
+	$cli->connect("0.0.0.0",1212,2);
 });
 $client->on("close", function($cli){
 	echo "Connection close\n";
-	$cli->connect("120.55.113.216",29998,2);
+	$cli->connect("0.0.0.0",1212,2);
 });
-$client->connect("120.55.113.216",29998,2);
+$client->connect("0.0.0.0",1212,2);
 function update_hq($data){ // 更新对应合约
 	$http = new swoole_http_client('127.0.0.1', 1215); 
 	$http->post('/update_hq', ['data'=>$data], function ($http) {
